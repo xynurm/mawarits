@@ -4914,8 +4914,9 @@ ul.pagination > li.page-item a.page-link:focus {color: #fff;}
   color: #333;
 }
 .checkout-form input, 
-.checkout-form textarea {
-  margin-top: 10px;
+.checkout-form textarea,
+.checkout-form select {
+
   font-size: .9375rem;
   color: rgb(0, 0, 0);
   border: solid 2px rgb(182, 182, 182);

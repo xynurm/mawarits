@@ -30,6 +30,12 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/color.css" />
+
+    <link
+      href="assets/plugins/select/selectr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
     <main>
@@ -177,55 +183,113 @@
                         3. Ahli waris yang saling menghalangi (Al-Hajb)
                       </p>
                     </div>
-                    <form class="checkout-form w-100 pb-4">
-                      <h4>Kalkulator Waris</h4>
-                      <div class="row mrg10">
-                        <div class="col-md-3 col-sm-3 col-lg-3 mb-2">
-                          <input type="number" placeholder="Harta Waris" />
+                    <h4 class="mb-4">Kalkulator Waris</h4>
+                    <!-- section 1 -->
+                    <div class="border mb-5 p-4 border-success rounded-lg">
+                      <form class="checkout-form w-100">
+                        <div class="row mrg10">
+                          <div class="col-sm-3">
+                            <label for="pewaris">Pewaris</label>
+                            <select id="pewaris">
+                              <option hidden selected>-Pilih-</option>
+                              <option value="laki-laki">Laki-Laki</option>
+                              <option value="perempuan">Perempuan</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
+                            <label>Harta Waris</label>
+                            <input type="number" placeholder="Harta Waris" />
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
+                            <label>Piutang</label>
+                            <input type="number" placeholder="Piutang" />
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
+                            <label>Hutang</label>
+                            <input type="number" placeholder="Hutang" />
+                          </div>
+                          <div class="col-md-3 col-sm-3 col-lg-3">
+                            <label>Pengurusan Jenazah</label>
+                            <input
+                              type="number"
+                              placeholder="Pengurusan Jenazah"
+                            />
+                          </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-lg-3 mb-2">
-                          <input type="tel" placeholder="Piutang" />
+                      </form>
+                    </div>
+                    <!-- section 2 -->
+                    <div class="border p-4 border-success rounded-lg">
+                      <form class="checkout-form w-100">
+                        <div class="row mrg10">
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Anak Laki-Laki</label>
+                            <input
+                              type="number"
+                              placeholder="Jumlah Anak Laki-Laki"
+                            />
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Anak Perempuan</label>
+                            <input
+                              type="number"
+                              placeholder="Jumlah Anak Perempuan"
+                            />
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3" id="div-suami">
+                            <label for="suami">Suami</label>
+                            <select id="suami">
+                              <option selected hidden value="0">-Pilih-</option>
+                              <option value="1">Ada</option>
+                              <option>Tidak Ada</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3" id="div-istri">
+                            <label for="istri">Istri</label>
+                            <select id="istri">
+                              <option selected hidden value="0">-Pilih-</option>
+                              <option value="1">Ada</option>
+                              <option>Tidak Ada</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Ayah</label>
+                            <input type="number" placeholder="Ayah" />
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Ibu</label>
+                            <input type="number" placeholder="Ibu" />
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Saudara Laki-Laki</label>
+                            <input
+                              type="number"
+                              placeholder="Jumlah Saudara Laki-laki"
+                            />
+                          </div>
+                          <div class="col-md-3 col-sm-3 mb-3">
+                            <label>Saudara Perempuan</label>
+                            <input
+                              type="number"
+                              placeholder="Jumlah Saudara Perempuan"
+                            />
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 mb-3" id="sisa-harta">
+                            <label>Sisa Harta</label>
+                            <input disabled placeholder="Sisa Harta Waris" />
+                          </div>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-lg-3 mb-2">
-                          <input type="number" placeholder="Hutang" />
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-lg-3 mb-2">
-                          <input type="number" placeholder="Pengurusan Jenazah" />
-                        </div>
-                       
+                      </form>
+                      <div class="col-sm-3" id="btn-hitung">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-block align-self-end"
+                        >
+                          Hitung
+                        </button>
                       </div>
-                    </form>
-                    <form class="checkout-form w-100">
-                      <div class="row mrg10">
-                        <div class="col-md-3 col-sm-3">
-                          <input type="email" placeholder="Jumlah Anak Laki-Laki" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="number" placeholder="Jumlah Anak Perempuan" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="number" placeholder="Suami" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="number" placeholder="Istri" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="number" placeholder="Ayah" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="tel" placeholder="Ibu" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="tel" placeholder="Jumlah Saudara Laki-laki" />
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                          <input type="tel" placeholder="Jumlah Saudara Perempuan" />
-                        </div>   
-                        <div class="col-md-12 col-sm-12">
-                          <input type="number" placeholder="Sisa Harta Waris" />
-                        </div>   
-                      </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -259,5 +323,25 @@
     <script src="assets/js/ResizeSensor.min.js"></script>
     <script src="assets/js/theia-sticky-sidebar.min.js"></script>
     <script src="assets/js/custom-scripts.js"></script>
+    <script src="assets/plugins/select/selectr.min.js"></script>
+    <script src="assets/pages/forms-advanced.js"></script>
+
+    <script>
+      $("#sisa-harta").hide();
+      $("#pewaris").change(function () {
+        if ($("#pewaris").val() == "laki-laki") {
+          $("#div-suami").hide();
+          $("#suami").val("0");
+        } else {
+          $("#div-suami").show()  
+        }
+        if ($("#pewaris").val() == "perempuan") {
+          $("#div-istri").hide();
+          $("#istri").val("0");
+        } else {
+          $("#div-istri").show();
+        }
+      });
+    </script>
   </body>
 </html>
