@@ -451,7 +451,7 @@
               <div class="row my-2">
                 <div class="col form-group">
                   <label for="almarhum">Almarhum</label>
-                  <select id="almarhum" class="form-control" onchange="showInput(this.value)" required>
+                  <select id="almarhum" class="form-control" onchange="ShowInput(this.value)" required>
                     <option selected disabled>Pilih</option>
                     <option value="pr">Perempuan</option>
                     <option value="lk">Laki-Laki</option>
@@ -539,6 +539,7 @@
             </form>
           </div>
           <div class="sec-title v2 w-100" id="hasil-hitungan">
+
           </div>
         </div>
       </div>
@@ -614,22 +615,38 @@
     });
   </script>
   <script>
-    function showInput(value) {
+    function ShowInput(value) {
       if (value === "pr") {
         document.getElementById("input-suami").classList.add("visible")
         document.getElementById("input-suami").classList.remove("invisible")
         document.getElementById("input-istri").classList.add("invisible")
         document.getElementById("input-istri").classList.remove("visible")
+        document.getElementById("suami").value = 0
+        document.getElementById("istri").value = 0
       } else if (value === "lk") {
         document.getElementById("input-suami").classList.add("invisible")
         document.getElementById("input-suami").classList.remove("visible")
         document.getElementById("input-istri").classList.add("visible")
         document.getElementById("input-istri").classList.remove("invisible")
+        document.getElementById("suami").value = 0
+        document.getElementById("istri").value = 0
       }
     }
-    showInput();
+    ShowInput();
   </script>
   <script src="kalkulatorWaris.js"></script>
+  <!-- membuat output pdf -->
+  <script>
+    function UnduhHitungan() {
+      const hasilHitungan = document.getElementById("hasil-hitungan").innerHTML
+      const originalContents = document.body.innerHTML;
+      document.body.innerHTML = hasilHitungan;
+      document.getElementById("unduh-hitungan").classList.add("invisible")
+      window.print();
+      document.body.innerHTML = originalContents;
+      document.getElementById("unduh-hitungan").classList.remove("invisible")
+    }
+  </script>
 </body>
 
 </html>
