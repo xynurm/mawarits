@@ -28,6 +28,13 @@ function HitungWaris() {
   let sodaraLk = parseInt(document.getElementById("sodara-lk").value) || 0;
   let sodaraPr = parseInt(document.getElementById("sodara-pr").value) || 0;
 
+  // reset value
+  if (almarhum === "pr") {
+    istri = 0;
+  } else {
+    suami = 0;
+  }
+
   // nilai awal pembagian waris
   let hartaWaris = harta + piutang - hutang - pemakaman;
   let bagianAnakLk = 0;
@@ -287,7 +294,9 @@ function HitungWaris() {
   </div>
   <h2 class="text-center my-5">Pembagian Waris</h2>
   <div class="row my-2" id="hitungan-waris">
-    <div class="col-6 my-2">
+  ${
+    bagianAnakLk !== 0
+      ? `<div class="col-6 my-2">
       <h5 class="text-center">Bagian untuk Anak Laki-Laki</h5>
       <p class="m-0">Jumlah : <span class="float-right">${anakLk} Orang</span></p>
       <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
@@ -296,8 +305,12 @@ function HitungWaris() {
       <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
         (totalWarisAnakLk * hartaWaris) / anakLk
       )} / orang</span></p>
-    </div>
-    <div class="col-6 my-2">
+    </div>`
+      : `<div></div>`
+  }
+  ${
+    bagianAnakPr !== 0
+      ? `<div class="col-6 my-2">
       <h5 class="text-center">Bagian untuk Anak Perempuan</h5>
       <p class="m-0">Jumlah : <span class="float-right">${anakPr} Orang</span></p>
       <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
@@ -306,51 +319,72 @@ function HitungWaris() {
       <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
         (totalWarisAnakPr * hartaWaris) / anakPr
       )} / orang</span></p>
-    </div>
-    <div class="col-6 my-2">
-      <h5 class="text-center">Bagian untuk Abi / Ayah</h5>
-      <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
-        totalWarisAbi * hartaWaris
-      )}</span></p>
-    </div>
-    <div class="col-6 my-2">
+    </div>`
+      : `<div></div>`
+  }
+  ${
+    bagianAbi !== 0
+      ? `<div class="col-6 my-2">
+        <h5 class="text-center">Bagian untuk Abi / Ayah</h5>
+        <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
+          totalWarisAbi * hartaWaris
+        )}</span></p>
+      </div>`
+      : `<div></div>`
+  }
+  ${
+    bagianUmi !== 0
+      ? `<div class="col-6 my-2">
       <h5 class="text-center">Bagian untuk Umi / Ibu</h5>
       <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
         totalWarisUmi * hartaWaris
       )}</span></p>
-    </div>
-    <div class="col-6 my-2">
-      <h5 class="text-center">Bagian untuk Saudara Laki-Laki</h5>
-      <p class="m-0">Jumlah : <span class="float-right">${sodaraLk} Orang</span></p>
-      <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
-        totalWarisSodaraLk * hartaWaris
-      )}</span></p>
-      <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
-        (totalWarisSodaraLk * hartaWaris) / sodaraLk
-      )} / orang</span></p>
-    </div>
-    <div class="col-6 my-2">
-      <h5 class="text-center">Bagian untuk Saudara Perempuan</h5>
-      <p class="m-0">Jumlah : <span class="float-right">${sodaraPr} Orang</span></p>
-      <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
-        totalWarisSodaraPr * hartaWaris
-      )}</span></p>
-      <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
-        (totalWarisSodaraPr * hartaWaris) / sodaraPr
-      )} / orang</span></p>
-    </div>
+    </div>`
+      : `<div></div>`
+  }
+    ${
+      bagianSodaraLk !== 0
+        ? `<div class="col-6 my-2">
+    <h5 class="text-center">Bagian untuk Saudara Laki-Laki</h5>
+    <p class="m-0">Jumlah : <span class="float-right">${sodaraLk} Orang</span></p>
+    <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
+      totalWarisSodaraLk * hartaWaris
+    )}</span></p>
+    <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
+      (totalWarisSodaraLk * hartaWaris) / sodaraLk
+    )} / orang</span></p>
+  </div>`
+        : `<div></div>`
+    }
+    ${
+      bagianSodaraPr !== 0
+        ? `<div class="col-6 my-2">
+    <h5 class="text-center">Bagian untuk Saudara Perempuan</h5>
+    <p class="m-0">Jumlah : <span class="float-right">${sodaraPr} Orang</span></p>
+    <p class="m-0">Total bagian : <span class="float-right">${formatRupiah.format(
+      totalWarisSodaraPr * hartaWaris
+    )}</span></p>
+    <p class="m-0">Bagian Per Orang : <span class="float-right">${formatRupiah.format(
+      (totalWarisSodaraPr * hartaWaris) / sodaraPr
+    )} / orang</span></p>
+  </div>`
+        : `<div></div>`
+    }
     ${
       almarhum === "pr"
+        ? bagianSuami !== 0
+          ? `<div class="col-6 my-2">
+        <h5 class="text-center">Bagian untuk Suami</h5>
+        <p class="m-0">
+          Total bagian :
+          <span class="float-right">
+            ${formatRupiah.format(totalWarisSuami * hartaWaris)}
+          </span>
+        </p>
+      </div>`
+          : `<div></div>`
+        : bagianIstri !== 0
         ? `<div class="col-6 my-2">
-          <h5 class="text-center">Bagian untuk Suami</h5>
-          <p class="m-0">
-            Total bagian :
-            <span class="float-right">
-              ${formatRupiah.format(totalWarisSuami * hartaWaris)}
-            </span>
-          </p>
-        </div>`
-        : `<div class="col-6 my-2">
           <h5 class="text-center">Bagian untuk Istri</h5>
           <p class="m-0">
             Jumlah : <span class="float-right">${istri} Orang</span>
@@ -369,13 +403,21 @@ function HitungWaris() {
             </span>
           </p>
         </div>`
+        : `<div></div>`
     }
-    <div class="col-6 my-2">
-      <h5 class="text-center">Sisa Waris</h5>
-      <p>Total Sisa : <span class="float-right">${formatRupiah.format(
-        sisaWaris * hartaWaris
-      )}</span></p>
-    </div>
+    ${
+      sisaWaris !== 0
+        ? `<div class="col-6 my-2">
+    <h5 class="text-center">Sisa Waris</h5>
+    <p>Total Sisa : <span class="float-right">${formatRupiah.format(
+      sisaWaris * hartaWaris
+    )}</span></p>
+  </div>`
+        : `<div></div>`
+    }
   </div>
+  <div class="d-flex justify-content-center form-group">
+                <button onclick="UnduhHitungan()" class="btn btn-success col-3 thm-bg thm-btn">Unduh Hitungan</button>
+              </div>
   <p class="my-5 text-center">Catatan - perhitungan ini hanya sebagai ilustrasi perhitungan waris</p>`;
 }
