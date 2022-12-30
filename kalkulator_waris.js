@@ -293,7 +293,7 @@ function HitungWaris() {
     </div>
   </div>
   <h2 class="text-center my-5">Pembagian Waris</h2>
-  <div class="row my-2 justify-content-center" id="hitungan-waris">
+  <div class="row mx-5 my-2 id="hitungan-waris">
   <form class="cart-form w-100">
   <table class="cart-table w-100">
     <thead>
