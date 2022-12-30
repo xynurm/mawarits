@@ -166,7 +166,8 @@
           </div>
         </div>
       </section>
-      <section id="ilmu_waris">
+      <!-- start kalkulator waris -->
+      <section id="kalkulator_waris">
         <div class="w-100 pt-120 pb-260 position-relative">
           <div class="container">
             <div class="post-detail-wrap w-100">
@@ -183,118 +184,163 @@
                         3. Ahli waris yang saling menghalangi (Al-Hajb)
                       </p>
                     </div>
-                    <h4 class="mb-4">Kalkulator Waris</h4>
+                    <h2 class="mb-4 text-center">Kalkulator Waris</h2>
                     <!-- section 1 -->
-                    <div class="border mb-5 p-4 border-success rounded-lg">
-                      <form class="checkout-form w-100">
-                        <div class="row mrg10">
-                          <div class="col-sm-3">
-                            <label for="pewaris">Pewaris</label>
-                            <select id="pewaris">
-                              <option hidden selected>-Pilih-</option>
-                              <option value="laki-laki">Laki-Laki</option>
-                              <option value="perempuan">Perempuan</option>
+                    <div class="rounded-lg">
+                      <form id="kalkulator">
+                        <h4 class="my-3 mb-3">Informasi Almarhum</h4>
+                        <div class="row my-2">
+                          <div class="col form-group">
+                            <label for="almarhum">Almarhum</label>
+                            <select id="almarhum" class="form-control" required>
+                              <option selected disabled>Pilih</option>
+                              <option value="pr">Perempuan</option>
+                              <option value="lk">Laki-Laki</option>
                             </select>
                           </div>
-                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
-                            <label>Harta Waris</label>
-                            <input type="number" placeholder="Harta Waris" />
-                          </div>
-                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
-                            <label>Piutang</label>
-                            <input type="number" placeholder="Piutang" />
-                          </div>
-                          <div class="col-md-3 col-sm-3 col-lg-3 mb-3">
-                            <label>Hutang</label>
-                            <input type="number" placeholder="Hutang" />
-                          </div>
-                          <div class="col-md-3 col-sm-3 col-lg-3">
-                            <label>Pengurusan Jenazah</label>
+                          <div class="col form-group">
+                            <label for="almarhum">Harta Waris</label>
                             <input
-                              type="number"
-                              placeholder="Pengurusan Jenazah"
+                              type="text"
+                              inputmode="numeric"
+                              id="harta-waris"
+                              class="form-control"
+                              required
                             />
                           </div>
                         </div>
-                      </form>
-                    </div>
-                    <!-- section 2 -->
-                    <div class="border p-4 border-success rounded-lg">
-                      <form class="checkout-form w-100">
-                        <div class="row mrg10">
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Anak Laki-Laki</label>
+                        <div class="row my-2">
+                          <div class="col form-group">
+                            <label for="almarhum">Piutang</label>
                             <input
-                              type="number"
-                              placeholder="Jumlah Anak Laki-Laki"
+                              type="text"
+                              inputmode="numeric"
+                              id="piutang"
+                              class="form-control"
+                              value="0"
                             />
                           </div>
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Anak Perempuan</label>
+                          <div class="col form-group">
+                            <label for="almarhum">Hutang</label>
                             <input
-                              type="number"
-                              placeholder="Jumlah Anak Perempuan"
+                              type="text"
+                              inputmode="numeric"
+                              id="hutang"
+                              class="form-control"
+                              value="0"
                             />
                           </div>
-                          <div class="col-md-3 col-sm-3 mb-3" id="div-suami">
+                          <div class="col form-group">
+                            <label for="almarhum">Pengurusan Jenazah</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="pemakaman"
+                              class="form-control"
+                              value="0"
+                            />
+                          </div>
+                        </div>
+                        <h2 class="my-3 mb-3">Informasi Ahli Waris</h2>
+                        <div class="row my-2">
+                          <div class="col form-group">
+                            <label for="almarhum">Anak Laki-Laki</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="anak-lk"
+                              class="form-control"
+                              value="0"
+                            />
+                          </div>
+                          <div class="col form-group">
+                            <label for="almarhum">Anak Perempuan</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="anak-pr"
+                              class="form-control"
+                              value="0"
+                            />
+                          </div>
+                        </div>
+                        <div class="row my-2">
+                          <div class="col form-group">
+                            <label for="abi">Abi / Ayah</label>
+                            <select id="abi" class="form-control">
+                              <option selected value="0">Tidak Ada</option>
+                              <option value="1">Ada</option>
+                            </select>
+                          </div>
+                          <div class="col form-group">
+                            <label for="umi">Umi / Ibu</label>
+                            <select id="umi" class="form-control">
+                              <option selected value="0">Tidak Ada</option>
+                              <option value="1">Ada</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 form-group" id="input-suami">
                             <label for="suami">Suami</label>
-                            <select id="suami">
-                              <option selected hidden value="0">-Pilih-</option>
+                            <select id="suami" class="form-control">
+                              <option selected value="0">Tidak Ada</option>
                               <option value="1">Ada</option>
-                              <option>Tidak Ada</option>
                             </select>
                           </div>
-                          <div class="col-md-3 col-sm-3 mb-3" id="div-istri">
+                          <div class="col-6 form-group" id="input-istri">
                             <label for="istri">Istri</label>
-                            <select id="istri">
-                              <option selected hidden value="0">-Pilih-</option>
-                              <option value="1">Ada</option>
-                              <option>Tidak Ada</option>
+                            <select id="istri" class="form-control">
+                              <option selected value="0">Tidak Ada</option>
+                              <option value="1">1 Istri</option>
+                              <option value="2">2 Istri</option>
+                              <option value="3">3 Istri</option>
+                              <option value="4">4 Istri</option>
                             </select>
-                          </div>
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Ayah</label>
-                            <input type="number" placeholder="Ayah" />
-                          </div>
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Ibu</label>
-                            <input type="number" placeholder="Ibu" />
-                          </div>
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Saudara Laki-Laki</label>
-                            <input
-                              type="number"
-                              placeholder="Jumlah Saudara Laki-laki"
-                            />
-                          </div>
-                          <div class="col-md-3 col-sm-3 mb-3">
-                            <label>Saudara Perempuan</label>
-                            <input
-                              type="number"
-                              placeholder="Jumlah Saudara Perempuan"
-                            />
-                          </div>
-
-                          <div class="col-md-12 col-sm-12 mb-3" id="sisa-harta">
-                            <label>Sisa Harta</label>
-                            <input disabled placeholder="Sisa Harta Waris" />
                           </div>
                         </div>
+                        <div class="row my-2">
+                          <div class="col form-group">
+                            <label for="almarhum">Saudara Laki-Laki</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="sodara-lk"
+                              class="form-control"
+                              value="0"
+                            />
+                          </div>
+                          <div class="col form-group">
+                            <label for="almarhum">Saudara Perempuan</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="sodara-pr"
+                              class="form-control"
+                              value="0"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center form-group">
+                          <button
+                            type="submit"
+                            class="btn btn-success col-3 thm-bg thm-btn"
+                          >
+                            Hitung
+                          </button>
+                        </div>
                       </form>
-                      <div class="col-sm-3" id="btn-hitung">
-                        <button
-                          type="button"
-                          class="btn btn-primary btn-block align-self-end"
-                        >
-                          Hitung
-                        </button>
-                      </div>
                     </div>
+                    <!-- start hasil hitung -->
+                    <div id="hasil-hitungan">
+                    
+                    <!-- end hasil hitung -->
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Post Detail Wrap -->
+            <!-- end kalkulator waris -->
           </div>
         </div>
       </section>
@@ -325,25 +371,38 @@
     <script src="assets/js/custom-scripts.js"></script>
     <script src="assets/plugins/select/selectr.min.js"></script>
     <script src="assets/pages/forms-advanced.js"></script>
-
+    <script src="kalkulator_waris.js"></script>
+    <!-- manipulasi select jenis kelamin almarhum -->
     <script>
-      $("#sisa-harta").hide();
-      $("#div-suami").hide();
-      $("#div-istri").hide();
-      $("#pewaris").change(function () {
-        if ($("#pewaris").val() == "laki-laki") {
-          $("#div-suami").hide();
+      $("#input-suami").hide();
+      $("#input-istri").hide();
+      $("#almarhum").change(function () {
+        if ($("#almarhum").val() == "lk") {
+          $("#input-suami").hide();
           $("#suami").val("0");
         } else {
-          $("#div-suami").show()  
+          $("#input-suami").show();
         }
-        if ($("#pewaris").val() == "perempuan") {
-          $("#div-istri").hide();
+        if ($("#almarhum").val() == "pr") {
+          $("#input-istri").hide();
           $("#istri").val("0");
         } else {
-          $("#div-istri").show();
+          $("#input-istri").show();
         }
       });
+    </script>
+    <!-- membuat output pdf -->
+    <script>
+      function unduhHitungan() {
+        $("#btn-unduh").hide();
+        const hasilHitungan =
+          document.getElementById("hasil-hitungan").innerHTML;
+        const originalContents = document.body.innerHTML;
+        document.body.innerHTML = hasilHitungan;
+        window.print();
+        mywindow.close();
+        
+      }
     </script>
   </body>
 </html>
