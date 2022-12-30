@@ -396,12 +396,11 @@
       function unduhHitungan() {
         $("#btn-unduh").hide();
         const hasilHitungan =
-          document.getElementById("hasil-hitungan").innerHTML;
+        document.getElementById("hasil-hitungan").innerHTML;
         const originalContents = document.body.innerHTML;
         document.body.innerHTML = hasilHitungan;
         window.print();
-        mywindow.close();
-        
+        window.close();
       }
     </script>
   </body>
