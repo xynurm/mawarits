@@ -427,9 +427,9 @@ function HitungWaris() {
        <td class="product-name">
       Istri
        </td>
-       <td class="product-price"><span>1 Orang</span></td>
+       <td class="product-price"><span>${istri} Orang</span></td>
        <td class="product-quantity">
-       ${formatRupiah.format(totalWarisIstri * hartaWaris)}
+       ${formatRupiah.format((totalWarisIstri * hartaWaris) / istri)} / orang
        </td>
        <td class="product-total-price">
          <span>   ${formatRupiah.format(totalWarisIstri * hartaWaris)}</span>
