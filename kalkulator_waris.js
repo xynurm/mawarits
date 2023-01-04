@@ -215,6 +215,7 @@ function HitungWaris() {
             // kondisi default
             bagianSodaraPr = 0.5;
           }
+
         } else {
           // kondisi ada saudara lk
           if (sodaraLk !== 0) {
@@ -246,6 +247,7 @@ function HitungWaris() {
     sodaraLk * bagianSodaraLk +
     sodaraPr * bagianSodaraPr;
 
+    console.log("bagian sodara pr :", bagianSodaraPr)
   // total bagian dari tiap ahli waris
   let totalWarisAnakLk = (bagianAnakLk * anakLk) / asalMasalah;
   let totalWarisAnakPr = (bagianAnakPr * anakPr) / asalMasalah;
@@ -373,7 +375,7 @@ function HitungWaris() {
       bagianSodaraLk !== 0
         ? ` <tr>
        <td class="product-name">
-       Umi / Ibu
+       Saudara Laki-Laki
        </td>
        <td class="product-price"><span>${sodaraLk} Orang</span></td>
        <td class="product-quantity">
@@ -391,13 +393,11 @@ function HitungWaris() {
       bagianSodaraPr !== 0
         ? ` <tr>
        <td class="product-name">
-       Umi / Ibu
+       Saudara Perempuan
        </td>
        <td class="product-price"><span>${sodaraPr} Orang</span></td>
        <td class="product-quantity">
-       ${formatRupiah.format((totalWarisSodaraPr * hartaWaris) / sodaraPr)} ${
-            sodraPr >= 1`/ Orang`
-          } 
+       ${formatRupiah.format((totalWarisSodaraPr * hartaWaris) / sodaraPr)} 
        </td>
        <td class="product-total-price">
          <span> ${formatRupiah.format(totalWarisSodaraPr * hartaWaris)}</span>
@@ -409,7 +409,7 @@ function HitungWaris() {
       bagianSuami !== 0
         ? ` <tr>
        <td class="product-name">
-       Umi / Ibu
+      Suami
        </td>
        <td class="product-price"><span>1 Orang</span></td>
        <td class="product-quantity">
@@ -425,7 +425,7 @@ function HitungWaris() {
       bagianIstri !== 0
         ? ` <tr>
        <td class="product-name">
-       Umi / Ibu
+      Istri
        </td>
        <td class="product-price"><span>1 Orang</span></td>
        <td class="product-quantity">
