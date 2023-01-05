@@ -424,7 +424,7 @@ function HitungWaris() {
     ${
       bagianIstri !== 0
         ? ` <tr>
-       <td class="product-name">
+       <td class="product-name ">
       Istri
        </td>
        <td class="product-price"><span>${istri} Orang</span></td>
@@ -437,6 +437,14 @@ function HitungWaris() {
      </tr>`
         : ""
     }
+
+       <td colspan="3" class="product-name">
+      Total
+       </td>
+       <td ><span>${formatRupiah.format(
+        hartaWaris
+      )}</span></td>
+
     </tbody>
   </table>
 </form>
