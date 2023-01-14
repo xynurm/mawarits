@@ -14,8 +14,7 @@
       sizes="35x35"
       type="image/png"
     />
-    <title>Mawarits</title>>
-
+    <title>Mawarits</title>
     <link rel="stylesheet" href="assets/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/flaticon.css" />
     <link rel="stylesheet" href="assets/css/animate.min.css" />
@@ -54,7 +53,6 @@
               /></a>
             </h1>
           </div>
-          <!-- Logo -->
           <nav
             class="d-flex flex-wrap align-items-center justify-content-between"
           >
@@ -68,9 +66,7 @@
                 </li>
                 <li class="menu-item-has-children"></li>
                 <li>
-                  <a href="perhitungan_waris.html" title=""
-                    >Kalkulator Waris</a
-                  >
+                  <a href="perhitungan_waris.html" title="">Kalkulator Waris</a>
                 </li>
                 <li class="menu-item-has-children"></li>
               </ul>
@@ -78,7 +74,6 @@
           </nav>
         </div>
       </header>
-      <!-- Header -->
       <div class="sticky-menu">
         <div class="container">
           <div
@@ -94,7 +89,6 @@
                 /></a>
               </h1>
             </div>
-            <!-- Logo -->
             <nav
               class="d-flex flex-wrap align-items-center justify-content-between"
             >
@@ -104,7 +98,9 @@
                   <li><a href="index.html" title="">Beranda</a></li>
                   <li class="menu-item-has-children"></li>
                   <li>
-                    <a href="ilmu_waris.html" title="">Dasar-Dasar Ilmu Waris</a>
+                    <a href="ilmu_waris.html" title=""
+                      >Dasar-Dasar Ilmu Waris</a
+                    >
                   </li>
                   <li class="menu-item-has-children"></li>
                   <li>
@@ -119,7 +115,6 @@
           </div>
         </div>
       </div>
-      <!-- Sticky Menu -->
       <div class="rspn-hdr">
         <div class="lg-mn">
           <div class="logo">
@@ -140,16 +135,12 @@
             </li>
             <li class="menu-item-has-children"></li>
             <li>
-              <a href="perhitungan_waris.html" title=""
-                >Kalkulator Waris</a
-              >
+              <a href="perhitungan_waris.html" title="">Kalkulator Waris</a>
             </li>
             <li class="menu-item-has-children"></li>
           </ul>
         </div>
-        <!-- Responsive Menu -->
       </div>
-      <!-- Responsive Header -->
       <section>
         <div class="w-100 pt-80 black-layer pb-70 opc65 position-relative">
           <div
@@ -162,11 +153,9 @@
                 <h1 class="mb-0">Kalkulator Waris</h1>
               </div>
             </div>
-            <!-- Page Title Wrap -->
           </div>
         </div>
       </section>
-      <!-- start kalkulator waris -->
       <section id="kalkulator_waris">
         <div class="w-100 pt-120 pb-260 position-relative">
           <div class="container">
@@ -175,7 +164,6 @@
                 <div class="col-md-12 col-sm-12 col-lg-12">
                   <div class="post-detail-inner w-100">
                     <h2 class="mb-4 text-center">Kalkulator Waris</h2>
-                    <!-- section 1 -->
                     <div class="rounded-lg">
                       <form id="kalkulator">
                         <h4 class="my-3 mb-3">Informasi Almarhum</h4>
@@ -209,7 +197,6 @@
                               id="piutang"
                               class="form-control"
                               placeholder="0"
-                              
                             />
                           </div>
                           <div class="col form-group">
@@ -260,14 +247,18 @@
                           <div class="col form-group">
                             <label for="abi">Abi / Ayah</label>
                             <select id="abi" class="form-control">
-                              <option selected placeholder="0">Tidak Ada</option>
+                              <option selected placeholder="0">
+                                Tidak Ada
+                              </option>
                               <option value="1">Ada</option>
                             </select>
                           </div>
                           <div class="col form-group">
                             <label for="umi">Umi / Ibu</label>
                             <select id="umi" class="form-control">
-                              <option selected placeholder="0">Tidak Ada</option>
+                              <option selected placeholder="0">
+                                Tidak Ada
+                              </option>
                               <option value="1">Ada</option>
                             </select>
                           </div>
@@ -276,14 +267,18 @@
                           <div class="col-6 form-group" id="input-suami">
                             <label for="suami">Suami</label>
                             <select id="suami" class="form-control">
-                              <option selected placeholder="0">Tidak Ada</option>
+                              <option selected placeholder="0">
+                                Tidak Ada
+                              </option>
                               <option value="1">Ada</option>
                             </select>
                           </div>
                           <div class="col-6 form-group" id="input-istri">
                             <label for="istri">Istri</label>
                             <select id="istri" class="form-control">
-                              <option selected placeholder="0">Tidak Ada</option>
+                              <option selected placeholder="0">
+                                Tidak Ada
+                              </option>
                               <option value="1">1 Istri</option>
                               <option value="2">2 Istri</option>
                               <option value="3">3 Istri</option>
@@ -324,15 +319,11 @@
                         </div>
                       </form>
                     </div>
-                    <!-- start hasil hitung -->
-                    <div id="hasil-hitungan">
-                    
-                    <!-- end hasil hitung -->
+                    <div id="hasil-hitungan"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- end kalkulator waris -->
           </div>
         </div>
       </section>
@@ -390,7 +381,7 @@
       function unduhHitungan() {
         $("#btn-unduh").hide();
         const hasilHitungan =
-        document.getElementById("hasil-hitungan").innerHTML;
+          document.getElementById("hasil-hitungan").innerHTML;
         const originalContents = document.body.innerHTML;
         document.body.innerHTML = hasilHitungan;
         window.print();
