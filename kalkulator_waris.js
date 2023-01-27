@@ -16,6 +16,7 @@ function HitungWaris() {
   // ambil value dari form
   let almarhum = document.getElementById("almarhum").value;
   let harta = parseInt(document.getElementById("harta-waris").value);
+  let wasiat = parseInt(document.getElementById("wasiat").value);
   let piutang = parseInt(document.getElementById("piutang").value) || 0;
   let hutang = parseInt(document.getElementById("hutang").value) || 0;
   let pemakaman = parseInt(document.getElementById("pemakaman").value) || 0;
@@ -36,7 +37,7 @@ function HitungWaris() {
   }
 
   // nilai awal pembagian waris
-  let hartaWaris = harta + piutang - hutang - pemakaman;
+  let hartaWaris = harta + piutang - hutang - pemakaman - wasiat;
   let bagianAnakLk = 0;
   let bagianAnakPr = 0;
   let bagianSuami = 0;
@@ -279,6 +280,9 @@ function HitungWaris() {
       }</span></h5>
       <h5 class="font-weight-normal">Harta Waris : <span class="float-right">${formatRupiah.format(
         harta
+      )}</span></h5>
+      <h5 class="font-weight-normal">Wasiat : <span class="float-right">${formatRupiah.format(
+        wasiat
       )}</span></h5>
       <h5 class="font-weight-normal">Piutang : <span class="float-right">${formatRupiah.format(
         piutang

@@ -168,7 +168,7 @@
                       <form id="kalkulator">
                         <h4 class="my-3 mb-3">Informasi Almarhum</h4>
                         <div class="row my-2">
-                          <div class="col form-group">
+                          <div class="col-sm-4 form-group">
                             <label for="almarhum">Almarhum</label>
                             <select id="almarhum" class="form-control" required>
                               <option selected disabled>Pilih</option>
@@ -176,8 +176,8 @@
                               <option value="lk">Laki-Laki</option>
                             </select>
                           </div>
-                          <div class="col form-group">
-                            <label for="almarhum">Harta Waris</label>
+                          <div class="col-sm-4 form-group">
+                            <label for="harta-waris">Harta Waris</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -187,10 +187,21 @@
                               required
                             />
                           </div>
+                          <div class="col-sm-4 form-group">
+                            <label for="wasiat">Wasiat</label>
+                            <input
+                              type="text"
+                              inputmode="numeric"
+                              id="wasiat"
+                              class="form-control"
+                              placeholder="0"
+                              required
+                            />
+                          </div>
                         </div>
                         <div class="row my-2">
-                          <div class="col form-group">
-                            <label for="almarhum">Piutang</label>
+                          <div class="col-sm-4 form-group">
+                            <label for="piutang">Piutang</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -199,8 +210,8 @@
                               placeholder="0"
                             />
                           </div>
-                          <div class="col form-group">
-                            <label for="almarhum">Hutang</label>
+                          <div class="col-sm-4 form-group">
+                            <label for="hutang">Hutang</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -209,8 +220,8 @@
                               placeholder="0"
                             />
                           </div>
-                          <div class="col form-group">
-                            <label for="almarhum">Pengurusan Jenazah</label>
+                          <div class="col-sm-4 form-group">
+                            <label for="pemakaman">Pengurusan Jenazah</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -223,7 +234,7 @@
                         <h4 class="my-3 mb-3">Informasi Ahli Waris</h4>
                         <div class="row my-2">
                           <div class="col form-group">
-                            <label for="almarhum">Anak Laki-Laki</label>
+                            <label for="anak-lk">Anak Laki-Laki</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -233,7 +244,7 @@
                             />
                           </div>
                           <div class="col form-group">
-                            <label for="almarhum">Anak Perempuan</label>
+                            <label for="anak-pr">Anak Perempuan</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -288,7 +299,7 @@
                         </div>
                         <div class="row my-2">
                           <div class="col form-group">
-                            <label for="almarhum">Saudara Laki-Laki</label>
+                            <label for="sodara-lk">Saudara Laki-Laki</label>
                             <input
                               type="text"
                               inputmode="numeric"
@@ -298,7 +309,7 @@
                             />
                           </div>
                           <div class="col form-group">
-                            <label for="almarhum">Saudara Perempuan</label>
+                            <label for="sodara-pr">Saudara Perempuan</label>
                             <input
                               type="text"
                               inputmode="numeric"
